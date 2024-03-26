@@ -1,0 +1,108 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.page {
+  position: relative;
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding-top: 60px;
+  font-family: Raleway, sans-serif;
+  background-color: #fec7ee;
+}
+
+.page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: rgb(255 255 255 / 0.3);
+}
+
+.page__title::after {
+  content: '*';
+  position: relative;
+}
+
+.page__title:hover {
+  color: #4c4c4c;
+  cursor: default;
+}
+
+.page__title:hover::before {
+  content: "На самом деле нет.\AВажнее &mdash; научиться ошибаться."; /* Текст, который появляется при наведении на .page__title */
+  position: absolute; /* Позиционирование относительно ближайшего родителя с position отличным от static */
+  top: 185px; /* Отступ сверху */
+  right: 20px; /* Отступ справа */
+  max-width: 760px; /* Максимальная ширина элемента */
+  border: 2px solid #000; /* Граница вокруг элемента */
+  border-radius: 20px; /* Скругление углов границы */
+  padding: 36px 44px; /* Внутренние отступы сверху/снизу и слева/справа соответственно */
+  box-shadow: 0 12px 0 #000; /* Тень под элементом */
+  color: #000; /* Цвет текста */
+  font-weight: normal; /* Нормальное начертание шрифта */
+  font-size: 35px; /* Размер шрифта */
+  line-height: 1; /* Высота строки */
+  letter-spacing: normal; /* Стандартное расстояние между буквами */
+  text-align: left; /* Выравнивание текста по левому краю */
+  text-transform: initial; /* Сброс трансформации текста (например, uppercase) */
+  background-color: #fff; /* Цвет фона */
+  white-space: pre; /* Сохранение пробелов и переносов строк в тексте */
+}
+
+
+.page__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.page__title {
+  z-index: 1;
+  max-width: 739px;
+  margin: 0 auto;
+  padding-top: 60px;
+  font-size: 120px;
+  letter-spacing: 3.5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* .page__title {
+  z-index: 1;
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  padding-top: 60px;
+  font-size: 116px;
+  letter-spacing: 3.5px;
+  text-align: center;
+  text-transform: uppercase;
+} */
+
+/*В закомментированном коде пример еще один способ расположить надпись поверх видео*/
+
+/*Класс .page__title:hover::before в CSS используется для стилизации псевдоэлемента ::before, который добавляется перед содержимым элемента с классом .page__title, но только в момент, когда на этот элемент наведен курсор мыши (:hover).
+
+Вот что делает каждая часть этого селектора:
+
+.page__title указывает на элементы с классом page__title.
+:hover является псевдоклассом, который применяется к элементу, когда на него наводится курсор мыши.
+::before создает псевдоэлемент, который вставляется перед содержимым целевого элемента. Этот псевдоэлемент может быть стилизован и использован для добавления декоративных элементов или дополнительного контента через свойство content.
+В контексте данного селектора, когда пользователь наводит курсор на элемент с классом .page__title, перед его содержимым появляется псевдоэлемент ::before, который можно стилизовать независимо. Это может быть использовано для создания интересных визуальных эффектов, таких как подсказки, декоративные элементы или дополнительная информация, которая появляется при наведении.*/
